@@ -37,3 +37,10 @@ script:
   - docker run --user=2000 --shm-size=1g -v `pwd`/test:/opt/robotframework/tests:Z -e BROWSER=firefox docker-robot-framework:ci
   - docker run --user=2000:2000 --shm-size=1g -v `pwd`/test:/opt/robotframework/tests:Z -e BROWSER=chrome docker-robot-framework:ci
   - docker run --user=2000:2000 --shm-size=1g -v `pwd`/test:/opt/robotframework/tests:Z -e BROWSER=firefox docker-robot-framework:ci
+
+
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
