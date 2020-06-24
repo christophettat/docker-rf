@@ -40,6 +40,8 @@ ENV ROBOT_FRAMEWORK_VERSION 3.1.2
 ENV SELENIUM_LIBRARY_VERSION 4.3.0
 ENV SSH_LIBRARY_VERSION 3.4.0
 ENV XVFB_VERSION 1.20
+ENV EXCELLIB_VERSION 2.0.0
+ENV PDF2TEXTLIBRARY_VERSION 1.0.1
 
 # Prepare binaries to be executed
 COPY bin/chromedriver.sh /opt/robotframework/bin/chromedriver
@@ -80,6 +82,8 @@ RUN apk update \
     robotframework-requests==$REQUESTS_VERSION \
     robotframework-seleniumlibrary==$SELENIUM_LIBRARY_VERSION \
     robotframework-sshlibrary==$SSH_LIBRARY_VERSION \
+    robotframework-excellib==$EXCELLIB_VERSION \
+    robotframework-pdf2textlibrary==$PDF2TEXTLIBRARY_VERSION \
     PyYAML \
 
 # Download the glibc package for Alpine Linux from its GitHub repository
